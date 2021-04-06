@@ -24,8 +24,7 @@ def add_playlist(url, data=None, json=None, headers=None):
     return r
 
 
-def change_password(url, user_name, new_pass, user_password):
-    query = {"user_name": user_name, "user_new_password": new_pass, "user_password": user_password}
-    r = improved_put(url, query)
+def change_password(url, data=None, json=None):
+    r = improved_put(url, data=data, json=json)
     return r
 
