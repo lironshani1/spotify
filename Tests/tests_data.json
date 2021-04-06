@@ -1,0 +1,53 @@
+{
+  "new_user": {
+    "user_name": "lironshani",
+    "user_password": "123456"
+},
+  "sign_up_no_user_name": {
+    "user_password": "123123"
+  },
+  "sign_up_no_password": {
+    "user_name": "liron123"
+  },
+  "sign_up_user_name_integer": {
+    "user_name": 123,
+    "user_password": "123123"
+  },
+    "sign_up_password_integer": {
+    "user_name": "liron",
+    "user_password": 12345
+  },
+  "add_friend_success": {
+    "friend_name": "liron",
+    "user_name": "lironshani",
+    "user_password": "123456"
+},
+  "add_friend_wrong_password": {
+    "friend_name": "liron",
+    "user_name": "liron123",
+    "user_password": "hgjhg"
+  },
+  "add_friend_same_user": {
+    "friend_name": "lironshani",
+    "user_name": "lironshani",
+    "user_password": "123456"
+  },
+  "add_friend_not_exist": {
+    "friend_name": "jdbjfhbd",
+    "user_name": "lironshani",
+    "user_password": "123456"
+  },
+  "add_friend_no_password": {
+    "friend_name": "liron",
+    "user_name": "lironshani"
+  },
+  "add_playlist_success": {
+    "playlist_name": "I'll be back",
+    "user_name": "lironshani",
+    "user_password": "123456"
+  },
+  "add_playlist_no_password": {
+    "playlist_name": "rock",
+    "user_name": "lironshani"
+  }
+}
