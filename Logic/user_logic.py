@@ -1,9 +1,10 @@
 from Infra.REST import *
+import json
 
 
-def post_user(url, user_name, user_password):
-    user_to_post = {"user_name": user_name, "user_password": user_password}
-    r = improved_post(url, user_to_post)
+def add_user(url, data=None, json=None, headers={"Content-Type": "application/json"}):
+    # r = improved_post(url=url, headers={"Content-Type": "application/json"}, data=data, json=json)
+    r = improved_post(url=url, headers=headers, data=data, json=json)
     return r
 
 
@@ -13,15 +14,13 @@ def get_user(url, user_name):
     return r
 
 
-def add_friend(url, friend_name, user_name, user_password):
-    query = {"friend_name": friend_name, "user_name": user_name, "user_password": user_password}
-    r = improved_put(url, query)
+def add_friend(url, data=None, json=None):
+    r = improved_put(url, data=data, json=json)
     return r
 
 
-def add_playlist(url, playlist_name, user_name, user_password):
-    query = {"playlist_name": playlist_name, "user_name": user_name, "user_password": user_password}
-    r = improved_post(url, query)
+def add_playlist(url, data=None, json=None, headers=None):
+    r = improved_post(url, data=data, json=json, headers=headers)
     return r
 
 
