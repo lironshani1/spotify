@@ -3,6 +3,10 @@
     "user_name": "lironshani",
     "user_password": "123456"
 },
+  "new_user2": {
+    "user_name": "lironsh1",
+    "user_password": "123456"
+  },
   "sign_up_no_user_name": {
     "user_password": "123123"
   },
@@ -16,6 +20,14 @@
     "sign_up_password_integer": {
     "user_name": "liron",
     "user_password": 12345
+  },
+  "sign_up_empty_name": {
+    "user_name": "",
+    "user_password": "123321"
+  },
+  "sign_up_empty_password": {
+    "user_name": "ls",
+    "user_password": ""
   },
   "add_friend_success": {
     "friend_name": "liron",
@@ -60,6 +72,36 @@
     "playlist_name": "The best of the best of the best",
     "song_title": "Run Through the Jungle",
     "user_name": "lironshani",
+    "user_password": "123456"
+  },
+  "add_playlist": {
+    "playlist_name": "I'll be back",
+    "user_name": "lironshani",
+    "user_password": "123456"
+  },
+    "add_playlist2": {
+    "playlist_name": "I'll be back",
+    "user_name": "lironsh1",
+    "user_password": "123456"
+  },
+  "change_password_success": {
+    "user_name": "lironshani",
+    "user_new_password": "1111",
+    "user_password": "123456"
+  },
+    "change_password_old_pass": {
+    "user_name": "lironshani",
+    "user_new_password": "123456",
+    "user_password": "123456"
+  },
+  "change_password_wrong_password": {
+    "user_name": "lironshani",
+    "user_new_password": "1212",
+    "user_password": "123321"
+  },
+    "change_password_empty": {
+    "user_name": "lironshani",
+    "user_new_password": "",
     "user_password": "123456"
   }
 }
