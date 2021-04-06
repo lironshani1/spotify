@@ -1,7 +1,7 @@
 from Infra.REST import *
 
 
-def post_song(url, data=None, json=None, headers=None):
+def add_song(url, data=None, json=None, headers=None):
     r = improved_post(url, data, json, headers)
     return r
 
@@ -38,3 +38,7 @@ def get_songs_list(url):
     songs_list.append(r)
     return songs_list
 
+
+def song_down_vote(url, data=None, json=None):
+    r = improved_put(url, data=data, json=json)
+    return r
