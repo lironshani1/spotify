@@ -74,6 +74,34 @@
     "user_name": "lironshani",
     "user_password": "123456"
   },
+    "song_up_vote": {
+    "playlist_name": "The best of the best of the best",
+    "song_title": "Run Through the Jungle",
+    "user_name": "lironshani",
+    "user_password": "123456"
+  },
+    "song_up_vote_no_password": {
+    "playlist_name": "The best of the best of the best",
+    "song_title": "Run Through the Jungle",
+    "user_name": "lironshani"
+  },
+  "song_down_vote_no_password": {
+    "playlist_name": "The best of the best of the best",
+    "song_title": "Run Through the Jungle",
+    "user_name": "lironshani"
+  },
+      "song_up_vote_wrong_password": {
+    "playlist_name": "The best of the best of the best",
+    "song_title": "Run Through the Jungle",
+    "user_name": "lironshani",
+    "user_password": "1234"
+  },
+        "song_down_vote_wrong_password": {
+    "playlist_name": "The best of the best of the best",
+    "song_title": "Run Through the Jungle",
+    "user_name": "lironshani",
+    "user_password": "1234"
+  },
   "add_playlist": {
     "playlist_name": "I'll be back",
     "user_name": "lironshani",

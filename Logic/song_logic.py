@@ -7,25 +7,21 @@ def add_song(url, data=None, json=None, headers=None):
 
 
 def get_songs_by_rating_equal(url, rating):
-    songs_list = []
     query = {"rank": rating, "op": "eq"}
     r = improved_get(url, query)
     return r
 
 
 def get_songs_by_rating_less(url, rating):
-    songs_list = []
     query = {"rank": rating, "op": "less"}
     r = improved_get(url, query)
     return r
 
 
 def get_songs_by_rating_greater(url, rating):
-    songs_list = []
     query = {"rank": rating, "op": "greater"}
     r = improved_get(url, query)
-    list.append(r)
-    return songs_list
+    return r
 
 
 def get_songs_list(url):
@@ -40,5 +36,10 @@ def get_songs_list(url):
 
 
 def song_down_vote(url, data=None, json=None):
+    r = improved_put(url, data=data, json=json)
+    return r
+
+
+def song_up_vote(url, data=None, json=None):
     r = improved_put(url, data=data, json=json)
     return r
