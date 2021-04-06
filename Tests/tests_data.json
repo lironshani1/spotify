@@ -49,5 +49,17 @@
   "add_playlist_no_password": {
     "playlist_name": "rock",
     "user_name": "lironshani"
+  },
+  "add_song_success": {
+    "song_genre": "Rock",
+    "song_performer": "Creedence Clearwater Revival",
+    "song_title": "Run Through the Jungle",
+    "song_year": 1970
+  },
+  "song_down_vote": {
+    "playlist_name": "The best of the best of the best",
+    "song_title": "Run Through the Jungle",
+    "user_name": "lironshani",
+    "user_password": "123456"
   }
 }

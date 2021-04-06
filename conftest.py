@@ -20,4 +20,5 @@ def get_tests_data():
 @pytest.fixture(scope="function", autouse=True)
 def delete_all_data(get_url):
     improved_delete(url=urljoin(get_url, "/admin/delete_all_users"))
+    improved_delete(url=urljoin(get_url, "/admin/delete_all_songs"))
 
