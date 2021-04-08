@@ -96,7 +96,7 @@
     "user_name": "lironshani",
     "user_password": "1234"
   },
-        "song_down_vote_wrong_password": {
+    "song_down_vote_wrong_password": {
     "playlist_name": "The best of the best of the best",
     "song_title": "Run Through the Jungle",
     "user_name": "lironshani",
@@ -131,5 +131,11 @@
     "user_name": "lironshani",
     "user_new_password": "",
     "user_password": "123456"
-  }
+  },
+  "add_song_to_playlist": {
+  "playlist_name": "The best of the best of the best",
+  "song_title": "Run Through the Jungle",
+  "user_name": "lironshani",
+  "user_password": "123456"
+}
 }
