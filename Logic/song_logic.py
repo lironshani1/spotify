@@ -26,12 +26,12 @@ def get_songs_by_rating_greater(url, rating):
 
 def get_songs_list(url):
     songs_list = []
-    r = get_songs_by_rating_equal(url, 10)
-    songs_list.append(r)
-    r = get_songs_by_rating_less(url, 10)
-    songs_list.append(r)
-    r = get_songs_by_rating_greater(url, 10)
-    songs_list.append(r)
+    r = get_songs_by_rating_equal(url, 10).json()
+    songs_list.append(r["data"])
+    r = get_songs_by_rating_less(url, 10).json()
+    songs_list.append(r["data"])
+    r = get_songs_by_rating_greater(url, 10).json()
+    songs_list.append(r["data"])
     return songs_list
 
 

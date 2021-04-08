@@ -3,7 +3,6 @@ import json
 
 
 def add_user(url, data=None, json=None, headers={"Content-Type": "application/json"}):
-    # r = improved_post(url=url, headers={"Content-Type": "application/json"}, data=data, json=json)
     r = improved_post(url=url, headers=headers, data=data, json=json)
     return r
 
