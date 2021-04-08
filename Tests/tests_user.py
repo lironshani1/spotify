@@ -5,10 +5,9 @@ from urllib.parse import urljoin
 
 class Test_user:
     def test_sign_up_same_id(self, get_url, get_tests_data):
-        r1 = user_logic.add_user(url=urljoin(get_url, "/users/add_user"), json=get_tests_data["new_user"])
-        print(r1.text)
+        user_logic.add_user(url=urljoin(get_url, "/users/add_user"), json=get_tests_data["new_user"])
         r2 = user_logic.get_user(url=urljoin(get_url, "/users/get_user"), user_name="lironshani")
-        if r2.text.find('error') == -1:
+        if "error" not in r2.text:
             r = user_logic.add_user(url=urljoin(get_url, "/users/add_user"), json=get_tests_data["new_user"])
             print(r.text)
             assert "error" in r.text
@@ -38,8 +37,10 @@ class Test_user:
         assert not r.ok
 
     def test_add_playlist_success(self, get_url, get_tests_data):
-        r = user_logic.add_playlist(url=urljoin(get_url, "/users/add_playlist"), json=get_tests_data["add_playlist_success"])
-        assert r.ok
+        user_logic.add_user(url=urljoin(get_url, "/users/add_user"), json=get_tests_data["new_user"])
+        user_logic.add_playlist(url=urljoin(get_url, "/users/add_playlist"), json=get_tests_data["add_playlist_success"])
+        r = user_logic.get_user(url=urljoin(get_url, "/users/get_user"), user_name=get_tests_data["new_user"]["user_name"])
+        assert get_tests_data["add_playlist_success"]["playlist_name"] in r.json()["data"]["playlists"]
 
     def test_add_playlist_no_password(self, get_url, get_tests_data):
         user_logic.add_user(url=urljoin(get_url, "/users/add_user"), json=get_tests_data["new_user"])
@@ -58,8 +59,9 @@ class Test_user:
         user_logic.add_user(url=urljoin(get_url, "/users/add_user"), json=get_tests_data["new_user"])
         user_logic.add_user(url=urljoin(get_url, "/users/add_user"), json=get_tests_data["new_user2"])
         user_logic.add_playlist(url=urljoin(get_url, "/users/add_playlist"), json=get_tests_data["add_playlist"])
-        r = user_logic.add_playlist(url=urljoin(get_url, "/users/add_playlist"), json=get_tests_data["add_playlist2"])
-        assert r.ok
+        user_logic.add_playlist(url=urljoin(get_url, "/users/add_playlist"), json=get_tests_data["add_playlist2"])
+        r = user_logic.get_user(url=urljoin(get_url, "/users/get_user"), user_name=get_tests_data["new_user2"]["user_name"])
+        assert get_tests_data["add_playlist2"]["playlist_name"] in r.json()["data"]["playlists"]
 
     def test_dont_show_password(self, get_url, get_tests_data):
         user_logic.add_user(url=urljoin(get_url, "/users/add_user"), json=get_tests_data["new_user"])
@@ -70,14 +72,10 @@ class Test_user:
     def test_change_password_success(self, get_url, get_tests_data):
         user_logic.add_user(url=urljoin(get_url, "/users/add_user"), json=get_tests_data["new_user"])
         user_logic.change_password(url=urljoin(get_url, "/users/change_password"), json=get_tests_data["change_password_success"])
-        r = user_logic.add_playlist(url=urljoin(get_url, "/users/add_playlist"), json=get_tests_data["add_playlist"])
+        user_logic.add_playlist(url=urljoin(get_url, "/users/add_playlist"), json=get_tests_data["add_playlist_new_password"])
+        r = user_logic.get_user(url=urljoin(get_url, "/users/get_user"), user_name=get_tests_data["new_user"]["user_name"])
         print(r.text)
-        assert "error" in r.text
-
-    def test_change_password_to_old_password(self, get_url, get_tests_data):
-        user_logic.add_user(url=urljoin(get_url, "/users/add_user"), json=get_tests_data["new_user"])
-        r = user_logic.change_password(url=urljoin(get_url, "/users/change_password"), json=get_tests_data["change_password_old_pass"])
-        print(r.text)
+        assert get_tests_data["add_playlist_new_password"]["playlist_name"] in r.json()["data"]["playlists"]
 
     @pytest.mark.parametrize("change_password_test_case", ["change_password_wrong_password", "change_password_empty"])
     def test_change_password_wrong_password(self, get_url, get_tests_data, change_password_test_case):
