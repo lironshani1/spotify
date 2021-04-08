@@ -11,6 +11,8 @@ class Test_user:
             r = user_logic.add_user(url=urljoin(get_url, "/users/add_user"), json=get_tests_data["new_user"])
             print(r.text)
             assert "error" in r.text
+        else:
+            assert False
 
     @pytest.mark.parametrize("sign_up_test_case", ["sign_up_no_password", "sign_up_no_user_name", "sign_up_user_name_integer", "sign_up_password_integer", "sign_up_empty_name", "sign_up_empty_password"])
     def test_sign_up(self, get_url, get_tests_data, sign_up_test_case):
