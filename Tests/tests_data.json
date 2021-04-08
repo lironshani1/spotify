@@ -117,6 +117,11 @@
     "user_new_password": "1111",
     "user_password": "123456"
   },
+  "add_playlist_new_password": {
+    "playlist_name": "I'll be back",
+    "user_name": "lironshani",
+    "user_password": "1111"
+  },
     "change_password_old_pass": {
     "user_name": "lironshani",
     "user_new_password": "123456",
